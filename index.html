@@ -21,11 +21,25 @@
         .course-card { border-radius: 1rem; overflow: hidden; }
         .testimonial-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
         .logo-img {
-  height: 40px;        /* Set logo size */
+  height: 80px;        /* Set logo size */
   width: auto;         /* Preserve aspect ratio */
   margin-right: 24px;  /* Space between logo and nav links */
   display: block;
   object-fit: contain; /* Ensures the image is contained within set height */
+}
+.heading {
+  height: 200px;       /* Increase for an even bigger logo */
+  width: auto;         /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;      /* Center inside h1 */
+  animation: fadeInDown 1s; /* Optional: consistent with animate__fadeInDown */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .heading {
+    height: 60px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -38,6 +52,24 @@
     margin-right: 12px;
   }
 }
+        .hero-title-left {
+  text-align: left;
+  margin-left: 0;
+  padding-left: max(2vw, 32px); /* adds some padding from the exact edge */
+  color: #ffd700;               /* optional: your brand color */
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.7rem;
+}
+
+/* Responsive adjustment for mobile: */
+@media (max-width: 600px) {
+  .hero-title-left {
+    padding-left: 12px;
+    font-size: 1.2rem;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -63,10 +95,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg py-5 text-center">
-        <div class="container py-5">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Welcome to learnMAX Academy</h1>
-            <p class="lead mb-4 animate__animated animate__fadeInUp">Empowering Learners for Competitive Success! XI–XII (K-CET, CBSE/ICSE/NCERT) | NEET, JEE, NDA</p>
+
+    <section id="home" class="hero-bg py-4 ">
+        <h4 class="hero-title-left">Welcome to</h4>
+        <div class="container py-4 text-center">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">
+                <img src="img/logo.png" alt="learnMAX logo" class="heading">
+            </h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp">Empowering Learners for Competitive Success! </p>
+<!--            <p>XI–XII (K-CET, CBSE/ICSE/NCERT) | NEET, JEE, NDA</p>-->
             <a href="#courses" class="btn btn-primary btn-lg animate__animated animate__fadeInLeft">Explore Courses</a>
             <a href="#contact" class="btn btn-outline-light btn-lg animate__animated animate__fadeInRight ms-2">Get in Touch</a>
         </div>
@@ -235,25 +272,36 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Full Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Email address">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" class="form-control" rows="3" placeholder="Your message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+
+                    <form action="https://formspree.io/f/xqanadzp" method="POST">
+  <label for="name">Your Name:</label>
+  <input type="text" name="name" id="name" required><br>
+  <label for="email">Your Email:</label>
+  <input type="email" name="email" id="email" required><br>
+  <label for="message">Message:</label>
+  <textarea name="message" id="message" required></textarea><br>
+  <button type="submit">Send Email</button>
+</form>
+
+<!--                    <form action="https://formspree.io/f/xqanadzp" method="POST" enctype="text/plain" >-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="name" class="form-label">Your Name</label>-->
+<!--                            <input type="text" id="name" class="form-control" placeholder="Full Name">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="email" class="form-label">Your Email</label>-->
+<!--                            <input type="email" id="email" class="form-control" placeholder="Email address">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="message" class="form-label">Message</label>-->
+<!--                            <textarea id="message" class="form-control" rows="3" placeholder="Your message"></textarea>-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="btn btn-primary">Send Message</button>-->
+<!--                    </form>-->
                     <div class="mt-4">
                         <p><i class="fa fa-map-marker-alt text-primary me-2"></i> 49, 8th Main N.G Palya, B.G Road, Bangalore - 29</p>
                         <p><i class="fa fa-phone-alt text-primary me-2"></i> +91 96112 65169</p>
-                        <p><i class="fa fa-envelope text-primary me-2"></i> rameshsince62@gmail.com</p>
+                        <p><i class="fa fa-envelope text-primary me-2"></i>academy.learn.max@gmail.com</p>
                     </div>
                 </div>
             </div>
