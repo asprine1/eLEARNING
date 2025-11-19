@@ -15,7 +15,9 @@
     <!-- Custom CSS (optional) -->
     <style>
         body { font-family: 'Heebo', sans-serif; }
-        .hero-bg { background: linear-gradient(rgba(24,29,56,0.7), rgba(24,29,56,0.7)), url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1400&q=80') center/cover; color: #fff; }
+        .hero-bg {
+        background:   /* Top image with 0.6 opacity using RGBA mask */     linear-gradient(rgba(24,29,56,0.7), rgba(24,29,56,0.7)),    url('img/address.jpg') center/cover no-repeat,  /* Bottom image, full opacity */ url('img/library.jpg') center/cover no-repeat; color: #fff;
+<!--        background: linear-gradient(rgba(24,29,56,0.7), rgba(24,29,56,0.7)), url('img/library.jpg') center/cover; color: #fff; }-->
         .navbar-brand { font-weight: bold; font-size: 2rem; }
         .section-title { background: #fff; color: #012970; display: inline-block; padding: 0 16px; font-weight: 700;}
         .course-card { border-radius: 1rem; overflow: hidden; }
@@ -131,7 +133,7 @@
                 <!-- Repeat for other courses -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card course-card shadow-sm animate__animated animate__fadeInUp">
-                        <img src="https://images.unsplash.com/photo-1444210971048-1679f449bca7?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Course Image">
+                        <img src="img/library.jpg" class="card-img-top" alt="Course Image">
                         <div class="card-body">
                             <h5 class="card-title">NEET Crash Course</h5>
                             <p class="card-text">Intensive preparation for medical entrance with mock tests and doubt sessions.</p>
@@ -185,7 +187,7 @@
                 <!-- Example Instructor -->
                                 <div class="col-lg-3 col-md-6">
                     <div class="card p-2 text-center">
-                        <img src="img/ramesh.jpg" class="testimonial-img mx-auto mt-3" alt="Instructor">
+                        <img src="img/rao.png" class="testimonial-img mx-auto mt-3" alt="Instructor">
                         <div class="card-body">
                             <h5 class="card-title">Prof. G Ramakrishna</h5>
                             <p class="card-text">Physics and Mathematics Faculty</p>
@@ -214,7 +216,7 @@
 <!--                </div>-->
                 <div class="col-lg-3 col-md-6">
                     <div class="card p-2 text-center">
-                        <img src="https://randomuser.me/api/portraits/men/77.jpg" class="testimonial-img mx-auto mt-3" alt="Instructor">
+                        <img src="img/sharath.jpg" class="testimonial-img mx-auto mt-3"  alt="Instructor">
                         <div class="card-body">
                             <h5 class="card-title"> Aqsa Khan </h5>
                             <p class="card-text">Chemistry Faculty</p>
@@ -273,15 +275,32 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
 
-                    <form action="https://formspree.io/f/xqanadzp" method="POST">
-  <label for="name">Your Name:</label>
-  <input type="text" name="name" id="name" required><br>
-  <label for="email">Your Email:</label>
-  <input type="email" name="email" id="email" required><br>
-  <label for="message">Message:</label>
-  <textarea name="message" id="message" required></textarea><br>
-  <button type="submit">Send Email</button>
+                    <form action="https://formspree.io/f/xqanadzp" method="POST" class="p-4 rounded shadow bg-white">
+  <div class="mb-3">
+    <label for="name" class="form-label fw-semibold">Your Name</label>
+    <input type="text" name="name" id="name" class="form-control" required placeholder="Enter your name">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label fw-semibold">Your Email</label>
+    <input type="email" name="email" id="email" class="form-control" required placeholder="your@email.com">
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label fw-semibold">Message</label>
+    <textarea name="message" id="message" class="form-control" rows="4" required placeholder="Type your message"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Send Email</button>
 </form>
+
+
+<!--                    <form action="https://formspree.io/f/xqanadzp" method="POST">-->
+<!--  <label for="name">Your Name:</label>-->
+<!--  <input type="text" name="name" id="name" required><br>-->
+<!--  <label for="email">Your Email:</label>-->
+<!--  <input type="email" name="email" id="email" required><br>-->
+<!--  <label for="message">Message:</label>-->
+<!--  <textarea name="message" id="message" required></textarea><br>-->
+<!--  <button type="submit">Send Email</button>-->
+<!--</form>-->
 
 <!--                    <form action="https://formspree.io/f/xqanadzp" method="POST" enctype="text/plain" >-->
 <!--                        <div class="mb-3">-->
@@ -298,24 +317,55 @@
 <!--                        </div>-->
 <!--                        <button type="submit" class="btn btn-primary">Send Message</button>-->
 <!--                    </form>-->
-                    <div class="mt-4">
-                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i> 49, 8th Main N.G Palya, B.G Road, Bangalore - 29</p>
-                        <p><i class="fa fa-phone-alt text-primary me-2"></i> +91 96112 65169</p>
-                        <p><i class="fa fa-envelope text-primary me-2"></i>academy.learn.max@gmail.com</p>
-                    </div>
+<!--                    <div class="mt-4">-->
+<!--                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i> 49, 8th Main N.G Palya, B.G Road, Bangalore - 29</p>-->
+<!--                        <p><i class="fa fa-phone-alt text-primary me-2"></i> +91 96112 65169</p>-->
+<!--                        <p><i class="fa fa-envelope text-primary me-2"></i>academy.learn.max@gmail.com</p>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4">
-        <div class="container text-center">
-            <small>&copy; 2025 learnMAX, All Rights Reserved.</small>
-        </div>
-    </footer>
+<!--    &lt;!&ndash; Footer &ndash;&gt;-->
+<!--    <footer class="bg-dark text-light py-4">-->
+<!--        <div class="container text-center">-->
+<!--            <small>&copy; 2025 learnMAX, All Rights Reserved.</small>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    &lt;!&ndash; Bootstrap JS + dependencies &ndash;&gt;-->
 
-    <!-- Bootstrap JS + dependencies -->
+    <!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <a class="btn btn-link" href="">About Us</a>
+                <a class="btn btn-link" href="">Contact Us</a>
+<!--                <a class="btn btn-link" href="">Privacy Policy</a>-->
+<!--                <a class="btn btn-link" href="">Terms & Condition</a>-->
+<!--                <a class="btn btn-link" href="">FAQs & Help</a>-->
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Contact</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i># 49, 8th Main N.G Palya, B.G Road, Banglore - 29</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9611265169</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>academy.learn.max@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
